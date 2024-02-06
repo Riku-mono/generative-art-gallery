@@ -5,5 +5,5 @@
   "semi": false,
   "singleQuote": true,
   "endOfLine": "lf",
-  "plugins": ["prettier-plugin-tailwind"]
+  "plugins": ["prettier-plugin-tailwindcss"]
 }
