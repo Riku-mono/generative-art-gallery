@@ -1,0 +1,13 @@
+{
+  "title": "Dots",
+  "description": "ランダムなカラーパレットと繰り返しの円形描画",
+  "size": {
+    "x": 512,
+    "y": 512
+  },
+  "modules": ["p5.js", "Canvas2D"],
+  "creator": "Riku-Mono",
+  "generate": true,
+  "createdAt": "2024-02-17T01:00:00",
+  "updatedAt": "2024-02-17T01:00:00"
+}

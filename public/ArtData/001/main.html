@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <title>001</title>
+    <link rel="stylesheet" href="/ArtData/style.css" />
+    <script src="/ArtData/utils.js"></script>
+  </head>
+  <body>
+    <main></main>
+    <script>
+      let colorPalettes = [
+        ['#022840', ['#F25C69', '#F25C69', '#FFBE53', '#03738C', '#95a2b5']],
+        ['#F2EAD6', ['#F85525', '#FAA968', '#028391', '#3A794A', '#01204E']],
+        ['#07192c', ['#8C0027', '#DD4111', '#F1A512', '#A1D4B1', '#2BAF90']],
+        ['#4DA394', ['#D54751', '#EF9A48', '#FFFCC7', '#373430', '#59322B']],
+        ['#12181c', ['#B11016', '#F37022', '#FBD0A6', '#007096', '#2ABA9E']],
+        ['#06394D', ['#e03b1f', '#EAA109', '#18668C', '#71A6AE']],
+      ]
+      let colorPalette = colorPalettes[Math.floor(Math.random() * colorPalettes.length)]
+      function setup() {
+        createCanvas(1024, 1024)
+        background(colorPalette[0])
+      }
+
+      async function generate() {
+        let colorPalette = colorPalettes[Math.floor(Math.random() * colorPalettes.length)]
+        background(colorPalette[0])
+        let grid = 25
+        let margin = 50
+        let step = (width - margin * 2) / grid
+        for (let i = 0; i < grid; i++) {
+          for (let j = 0; j < grid; j++) {
+            let x = margin + (i + 0.5) * step
+            let y = margin + (j + 0.5) * step
+            let radius = step * random(0.4, 0.9)
+            let color = colorPalette[1][Math.floor(random(colorPalette[1].length))]
+            drawRandomCircle(x, y, radius, color)
+            await delay(1)
+          }
+        }
+        finish()
+      }
+
+      function drawRandomCircle(x, y, radius, color) {
+        fill(color)
+        noStroke()
+        circle(x, y, radius)
+      }
+    </script>
+  </body>
+</html>
