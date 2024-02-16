@@ -12,7 +12,7 @@ export default function MotionProvider({ children }: { children: React.ReactNode
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
-        className="flex flex-1 flex-col"
+        className="flex-1"
       >
         {children}
       </motion.div>
