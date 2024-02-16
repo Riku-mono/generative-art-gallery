@@ -9,7 +9,7 @@ export default function Markdown({ markdown }: { markdown: string }) {
       <ReactMarkdown
         remarkPlugins={[RemarkGfm]}
         rehypePlugins={[RehypeHighlight]}
-        className="prose dark:prose-invert max-w-none"
+        className="prose max-w-none dark:prose-invert"
         components={{
           h1: ({ node, children }) => <h1 className="dark:border-gray-700">{children}</h1>,
           h2: ({ node, children }) => <h2 className="dark:border-gray-700">{children}</h2>,
@@ -34,6 +34,15 @@ export default function Markdown({ markdown }: { markdown: string }) {
             <div className="overflow-x-auto">
               <table>{children}</table>
             </div>
+          ),
+          a: ({ node, children, ...props }) => (
+            <a
+              {...props}
+              target={props.href?.startsWith('/') ? undefined : '_blank'}
+              rel={props.href?.startsWith('/') ? undefined : 'noopener noreferrer'}
+            >
+              {children}
+            </a>
           ),
         }}
       >
