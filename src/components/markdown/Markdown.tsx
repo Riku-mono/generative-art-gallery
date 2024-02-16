@@ -2,13 +2,14 @@ import ReactMarkdown from 'react-markdown'
 import 'highlight.js/styles/github-dark.css'
 import RehypeHighlight from 'rehype-highlight'
 import RemarkGfm from 'remark-gfm'
+import rehypeColorChips from 'rehype-color-chips'
 
 export default function Markdown({ markdown }: { markdown: string }) {
   return (
     <div className="w-full overflow-hidden break-words rounded-md bg-neutral-50 p-4 dark:bg-neutral-800 sm:bg-neutral-100 sm:p-6 lg:p-8">
       <ReactMarkdown
         remarkPlugins={[RemarkGfm]}
-        rehypePlugins={[RehypeHighlight]}
+        rehypePlugins={[RehypeHighlight, rehypeColorChips]}
         className="prose max-w-none dark:prose-invert"
         components={{
           h1: ({ node, children }) => <h1 className="dark:border-gray-700">{children}</h1>,
@@ -25,7 +26,7 @@ export default function Markdown({ markdown }: { markdown: string }) {
                 </code>
               </>
             ) : (
-              <code className={`dark:bg-neutral-700`} {...props}>
+              <code className={`relative dark:bg-neutral-700`} {...props}>
                 {children}
               </code>
             )

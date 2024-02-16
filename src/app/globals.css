@@ -32,3 +32,15 @@
 *::-webkit-scrollbar-track {
   background: transparent;
 }
+
+/* inline-code の #000000 にカラーチップを表示する */
+.gfm-color-chip {
+  margin-left: 0.125rem;
+  margin-bottom: 0.06rem;
+  display: inline-block;
+  height: 0.625rem;
+  width: 0.625rem;
+  vertical-align: middle;
+  border-radius: 9999px;
+  border: 1px solid gray;
+}
