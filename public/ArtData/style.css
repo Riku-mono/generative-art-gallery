@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  background-color: #f0f0f0;
+  overflow: hidden;
+}
+main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+canvas {
+  pointer-events: none;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1;
+}
