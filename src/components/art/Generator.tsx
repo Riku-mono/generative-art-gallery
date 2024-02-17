@@ -43,7 +43,7 @@ export default function Generator({
             }}
           >
             <iframe
-              src={`/ArtData/${id}/main.html`}
+              src={`/ArtData/${id}/main`}
               className="absolute left-0 top-0 h-full w-full shadow-inner"
             ></iframe>
           </div>
