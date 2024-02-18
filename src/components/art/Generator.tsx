@@ -43,7 +43,7 @@ export default function Generator({
             }}
           >
             <iframe
-              src={`/ArtData/${id}/main`}
+              src={`/ArtData/${id}/main${process.env.NODE_ENV === 'development' ? '.html' : ''}`}
               className="absolute left-0 top-0 h-full w-full shadow-inner"
             ></iframe>
           </div>

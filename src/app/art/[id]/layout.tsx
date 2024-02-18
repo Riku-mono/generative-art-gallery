@@ -11,8 +11,8 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   const article = await getDetail(`ArtData/${params.id}`)
 
   return {
-    title: `#${params.id} ${article.title} | Generative Arts`,
-    description: article.description,
+    title: `#${params.id} ${article?.title} | Generative Arts`,
+    description: article?.description,
   }
 }
 

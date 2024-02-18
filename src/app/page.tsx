@@ -24,8 +24,8 @@ export default async function Home() {
             href={`/art/${latestArt}`}
             className="text-blue-500 underline hover:text-blue-600 hover:underline"
           >
-            {latestArt} 『{latestArtData.title}』
-            {new Date(latestArtData.createdAt).toLocaleString()}
+            {latestArt} 『{latestArtData?.title || 'untitled'}』
+            {new Date(latestArtData?.createdAt).toLocaleString()}
           </Link>
         </p>
         {paths.length === 0 && (
