@@ -1,0 +1,13 @@
+{
+  "title": "Circles in Dots",
+  "description": "001からの派生\nドットの中に小さい円をランダムに生成・ランダムな傾斜",
+  "size": {
+    "x": 512,
+    "y": 512
+  },
+  "modules": ["p5.js", "Canvas2D"],
+  "creator": "Riku-Mono",
+  "generate": true,
+  "createdAt": "2024-02-18T22:51:00",
+  "updatedAt": "2024-02-18T22:51:00"
+}
