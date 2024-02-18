@@ -1,6 +1,6 @@
 ## Source Code
 
-[source code](https://github.com/Riku-mono/generative-art-gallery/blob/main/src/public/ArtData/001/main.html) - リポジトリ
+[source code](https://github.com/Riku-mono/generative-art-gallery/blob/main/public/ArtData/001/main.html) - リポジトリ
 
 ## Color Palettes
 
