@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <title>002</title>
+    <link rel="stylesheet" href="/ArtData/style.css" />
+    <script src="/ArtData/utils.js"></script>
+  </head>
+  <body>
+    <main></main>
+    <script>
+      let colorPalettes = [
+        ['#022840', ['#F25C69', '#F25C69', '#FFBE53', '#03738C', '#95a2b5']],
+        ['#F2EAD6', ['#F85525', '#FAA968', '#028391', '#3A794A', '#01204E']],
+        ['#07192c', ['#8C0027', '#DD4111', '#F1A512', '#A1D4B1', '#2BAF90']],
+        ['#4DA394', ['#D54751', '#EF9A48', '#FFFCC7', '#373430', '#59322B']],
+        ['#12181c', ['#B11016', '#F37022', '#FBD0A6', '#007096', '#2ABA9E']],
+        ['#06394D', ['#e03b1f', '#EAA109', '#18668C', '#71A6AE']],
+      ]
+      let colorPalette = colorPalettes[Math.floor(Math.random() * colorPalettes.length)]
+      function setup() {
+        createCanvas(1024, 1024)
+        background(colorPalette[0])
+      }
+
+      async function generate() {
+        let colorPalette = colorPalettes[Math.floor(Math.random() * colorPalettes.length)]
+        background(colorPalette[0])
+        let grid = 21
+        let margin = 200
+        let step = (width + margin * 2) / grid
+        push()
+        translate(width / 2, height / 2)
+        rotate(random(TWO_PI))
+        for (let i = -grid / 2; i < grid / 2; i++) {
+          for (let j = -grid / 2; j < grid / 2; j++) {
+            let x = (i + 0.5) * step
+            let y = (j + 0.5) * step
+            let radius = step * random(0.4, 0.7)
+            let rep = random(1, 6)
+            drawRandomCircle(x, y, radius, colorPalette, rep)
+            await delay(1)
+          }
+        }
+        pop()
+        finish()
+      }
+
+      function drawRandomCircle(x, y, radius, colorPalette, rep) {
+        if (rep <= 0) return
+        let color = colorPalette[1][Math.floor(random(colorPalette[1].length))]
+        fill(color)
+        noStroke()
+        circle(x, y, radius)
+        drawRandomCircle(x, y, radius * random(0.5, 0.9), colorPalette, rep - 1)
+      }
+    </script>
+  </body>
+</html>
