@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <title>003</title>
+    <link rel="stylesheet" href="/ArtData/style.css" />
+    <script src="/ArtData/utils.js"></script>
+  </head>
+  <body>
+    <main></main>
+    <script>
+      let color1, color2
+      let color1Strength = 1
+      function setup() {
+        createCanvas(1024, 1024)
+        background('#131821')
+        noFill()
+      }
+
+      async function generate() {
+        color1 = color(random(255), random(255), random(255))
+        color2 = color(random(255), random(255), random(255))
+        background('#131821')
+        const cellSize = width / 20
+        strokeWeight(cellSize / 5)
+        strokeCap(ROUND)
+
+        for (let x = 0; x < width; x += cellSize) {
+          color1Strength = 1
+          for (let y = 0; y < height; y += cellSize) {
+            stroke(lerpColor(color1, color2, color1Strength))
+            drawLine(x, y, cellSize)
+            color1Strength *= 0.9 * random(0.9, 1.1)
+            await delay(1)
+          }
+        }
+        finish()
+      }
+
+      function drawLine(x, y, size) {
+        const r = random(1)
+        if (r < 0.5) {
+          line(x, y, x + size, y + size)
+        } else {
+          line(x, y + size, x + size, y)
+        }
+      }
+    </script>
+  </body>
+</html>
