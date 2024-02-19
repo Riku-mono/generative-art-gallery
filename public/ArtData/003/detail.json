@@ -1,0 +1,13 @@
+{
+  "title": "Maze with gradient color",
+  "description": "グリッド走査と単純なランダムライン描画とグラデーション",
+  "size": {
+    "x": 512,
+    "y": 512
+  },
+  "modules": ["p5.js", "Canvas2D"],
+  "creator": "Riku-Mono",
+  "generate": true,
+  "createdAt": "2024-02-19T21:18:00",
+  "updatedAt": "2024-02-19T21:18:00"
+}
