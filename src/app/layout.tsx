@@ -5,6 +5,7 @@ import ThemeProvider from '@/components/providers/ThemeProvider'
 import MotionProvider from '@/components/providers/MotionProvider'
 import Header from '@/components/ui/Header'
 import Footer from '@/components/ui/Footer'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const roboto_flex = Roboto_Flex({ subsets: ['latin'] })
 
@@ -20,6 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ''} />
       <body
         className={`${roboto_flex.className} flex min-h-screen flex-col bg-neutral-50 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-50`}
       >

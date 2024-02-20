@@ -10,6 +10,7 @@
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}' --plugin=prettier-plugin-tailwindcss"
   },
   "dependencies": {
+    "@next/third-parties": "^14.1.0",
     "@types/estree": "^1.0.5",
     "framer-motion": "^11.0.3",
     "next": "14.1.0",
