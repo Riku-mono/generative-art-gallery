@@ -8,6 +8,7 @@
   "modules": ["p5.js", "Canvas2D"],
   "creator": "Riku-Mono",
   "generate": true,
+  "generatorType": "Generate",
   "createdAt": "2024-02-19T21:18:00",
   "updatedAt": "2024-02-19T21:18:00"
 }
