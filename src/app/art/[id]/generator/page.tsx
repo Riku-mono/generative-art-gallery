@@ -56,7 +56,7 @@ export default async function ArtGeneratorPage({ params }: { params: { id: strin
         className="mx-auto my-4 flex max-w-full flex-col gap-y-4 px-2"
         style={{ width: canvasSize.width }}
       >
-        <Generator id={params.id} canvasSize={canvasSize} />
+        <Generator id={params.id} canvasSize={canvasSize} type={detail.generatorType} />
       </div>
     </>
   )

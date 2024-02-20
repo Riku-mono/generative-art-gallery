@@ -1,8 +1,7 @@
-import { getArticle, getDetail } from '@/app/api/fs'
+import { getArticle } from '@/app/api/fs'
 import Markdown from '@/components/markdown/Markdown'
 
 export default async function Art({ params }: { params: { id: string } }) {
-  const detail = await getDetail(`ArtData/${params.id}`)
   const markdown = await getArticle(`ArtData/${params.id}/article.md`)
 
   let targets = [
