@@ -1,11 +1,26 @@
 let animation = true
 
 window.addEventListener('message', (response) => {
-  if (response.data.type === 'generate') {
+  if (response.data.type === 'Generate') {
     animation = response.data.animation
     console.log('Generating...', 'Animation:', response.data.animation)
     generate()
-  } else if (response.data.type === 'download') {
+  }
+
+  if (response.data.type === 'Draw') {
+    if (response.data.action === 'Play') {
+      loop()
+      window.parent.postMessage('Drawing Play', '*')
+    } else if (response.data.action === 'Pause') {
+      noLoop()
+      window.parent.postMessage('Drawing Pause', '*')
+    } else if (response.data.action === 'Reset') {
+      reset()
+      window.parent.postMessage('Drawing reset', '*')
+    }
+  }
+
+  if (response.data.type === 'Download') {
     download()
   }
 })
@@ -18,7 +33,8 @@ function delay(ms) {
 }
 
 function finish() {
-  window.parent.postMessage('Draw completed', '*')
+  window.parent.postMessage('Generating completed', '*')
+  window.parent.postMessage('Drawing completed', '*')
 }
 
 async function download() {
