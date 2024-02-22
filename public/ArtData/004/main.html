@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <title>004</title>
+    <link rel="stylesheet" href="/ArtData/style.css" />
+    <script src="/ArtData/utils.js"></script>
+  </head>
+  <body>
+    <main></main>
+    <script>
+      let circles
+
+      function setup() {
+        createCanvas(1024, 1024)
+        background('#131821')
+        circles = []
+        noLoop()
+      }
+
+      function draw() {
+        let x, y
+        let r = 2
+
+        let i = 0
+        do {
+          x = random(0, width)
+          y = random(0, height)
+
+          i++
+          if (i > 1000) {
+            return
+          }
+        } while (!check(x, y, r))
+
+        while (r < 150 && check(x, y, r)) {
+          r++
+        }
+        r--
+
+        circle(x, y, r * 2)
+        circles.push({ x, y, r })
+        if (circles.length > 2000) {
+          noLoop()
+          finish()
+        }
+      }
+
+      function check(x, y, r) {
+        let result = true
+        circles.map((c) => {
+          let d = dist(x, y, c.x, c.y)
+          if (d < r + c.r) {
+            result = false
+          }
+        })
+        return result
+      }
+
+      function reset() {
+        background('#131821')
+        circles = []
+      }
+    </script>
+  </body>
+</html>

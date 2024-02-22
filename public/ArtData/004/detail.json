@@ -1,0 +1,14 @@
+{
+  "title": "Random Packing (Circle)",
+  "description": "キャンバス内に円を詰める",
+  "size": {
+    "x": 512,
+    "y": 512
+  },
+  "modules": ["p5.js", "Canvas2D"],
+  "creator": "Riku-Mono",
+  "generate": false,
+  "generatorType": "Draw",
+  "createdAt": "2024-02-23T01:00:00",
+  "updatedAt": "2024-02-23T01:00:00"
+}
