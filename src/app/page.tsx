@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { getDetail, getFolderPaths } from './api/fs'
 import GalleryItem from '@/components/GalleryItem'
 
-const itemToShow = 20
+const itemToShow = 12
 
 export default async function Home() {
   const paths = await getFolderPaths('ArtData')

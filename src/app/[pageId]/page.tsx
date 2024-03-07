@@ -3,7 +3,7 @@ import { getDetail, getFolderPaths } from '@/app/api/fs'
 import { redirect } from 'next/navigation'
 import GalleryItem from '@/components/GalleryItem'
 
-const itemToShow = 20
+const itemToShow = 12
 
 export const generateStaticParams = async () => {
   const paths = await getFolderPaths('ArtData')
@@ -15,7 +15,9 @@ export const generateStaticParams = async () => {
 
 export default async function ArtPage({ params }: { params: { pageId: string } }) {
   const paths = await getFolderPaths('ArtData')
-  const pages = Array.from({ length: Math.ceil(paths.length / 2) }, (_, i) => (i + 1).toString())
+  const pages = Array.from({ length: Math.ceil(paths.length / itemToShow) }, (_, i) =>
+    (i + 1).toString()
+  )
   if (params.pageId === '1') {
     redirect('/')
   }
