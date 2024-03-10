@@ -13,6 +13,13 @@
   padding: 2rem 0.5rem 0.5rem !important;
 }
 
+.svg-filter {
+  filter: invert(7%) sepia(5%) saturate(246%) hue-rotate(314deg) brightness(97%) contrast(95%);
+}
+.dark .svg-filter {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
 *::-webkit-scrollbar {
   width: 10px;
   transition: all 1s ease 0s;
