@@ -3,6 +3,10 @@
 import { useEffect, useState } from 'react'
 import './art.css'
 import Motion from './Motion'
+import Image from 'next/image'
+
+const PrimaryBtnClassName = `flex items-center gap-2 rounded-md border-2 border-neutral-500 bg-neutral-700 px-3 py-1 text-neutral-50 transition dark:bg-neutral-800`
+const BtnClassName = `flex items-center gap-2 rounded-md border-2 border-neutral-300 bg-neutral-50 px-3 py-1 transition hover:bg-neutral-100 active:scale-95 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:bg-neutral-800`
 
 function GenerateBtn() {
   const [isGenerating, setIsGenerating] = useState(false)
@@ -37,7 +41,7 @@ function GenerateBtn() {
         />
         <span className="ml-2">Animation</span>
       </label>
-      <div className="flex gap-4">
+      <div className="flex flex-wrap justify-center gap-4">
         <button
           disabled={isGenerating}
           onClick={() => {
@@ -50,9 +54,42 @@ function GenerateBtn() {
               )
             }
           }}
-          className={`btn btn-primary rounded-md bg-neutral-700 px-3 py-2 text-neutral-100 transition-colors duration-200 ease-in-out ${!isGenerating ? 'hover:bg-neutral-800 hover:text-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:hover:text-neutral-50' : ''}`}
+          className={`${PrimaryBtnClassName} ${
+            isGenerating
+              ? ''
+              : 'hover:bg-neutral-800 active:scale-95 dark:hover:bg-neutral-900 dark:hover:text-neutral-50'
+          }`}
         >
-          {isGenerating ? 'Generating...' : 'Generate Art'}
+          {(isGenerating && (
+            <>
+              <Image
+                src="/ui/loading-01.svg"
+                alt="loading"
+                width={16}
+                height={16}
+                className="animate-spin"
+                style={{
+                  filter:
+                    'invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)',
+                }}
+              />
+              <span>Generating...</span>
+            </>
+          )) || (
+            <>
+              <Image
+                src="/ui/brush-01.svg"
+                alt="generate"
+                width={16}
+                height={16}
+                style={{
+                  filter:
+                    'invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)',
+                }}
+              />
+              <span>Generate Art</span>
+            </>
+          )}
         </button>
         {isGenerated && (
           <button
@@ -62,9 +99,16 @@ function GenerateBtn() {
                 iframeElm.contentWindow?.postMessage({ type: 'Download' }, '*')
               }
             }}
-            className="rounded-md bg-neutral-200 px-3 py-2 transition-colors duration-200 ease-in-out hover:bg-neutral-300 hover:text-neutral-900 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:hover:text-neutral-50"
+            className="flex items-center gap-2 rounded-md border-2 border-neutral-300 bg-neutral-50 px-3 py-1 transition hover:bg-neutral-100 active:scale-95 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:bg-neutral-800"
           >
-            Download
+            <Image
+              src="/ui/download-03.svg"
+              alt="download"
+              width={16}
+              height={16}
+              className="svg-filter select-none"
+            />
+            <span>Download</span>
           </button>
         )}
       </div>
@@ -117,31 +161,60 @@ function DrawBtn() {
     }
   }
 
-  const primaryBtnClassName = `btn btn-primary rounded-md bg-neutral-700 px-3 py-2 text-neutral-100 transition-colors duration-200 ease-in-out`
-  const btnClassName = `rounded-md bg-neutral-200 px-3 py-2 transition-colors duration-200 ease-in-out hover:bg-neutral-300 hover:text-neutral-900 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:hover:text-neutral-50`
-
   return (
     <>
       {!isFinished && (
         <>
-          {!isPlaying ? (
-            <button onClick={handlePlayPause} className={primaryBtnClassName}>
-              Play
-            </button>
-          ) : (
-            <button onClick={handlePlayPause} className={primaryBtnClassName}>
-              Pause
-            </button>
-          )}
+          <button
+            onClick={handlePlayPause}
+            className={`${PrimaryBtnClassName} mx-auto hover:bg-neutral-800 active:scale-95 dark:hover:bg-neutral-900 dark:hover:text-neutral-50`}
+          >
+            {!isPlaying ? (
+              <>
+                <Image
+                  src="/ui/play.svg"
+                  alt="play"
+                  width={16}
+                  height={16}
+                  style={{
+                    filter:
+                      'invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)',
+                  }}
+                />
+                <span>Play</span>
+              </>
+            ) : (
+              <>
+                <Image
+                  src="/ui/pause-circle.svg"
+                  alt="pause"
+                  width={16}
+                  height={16}
+                  style={{
+                    filter:
+                      'invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)',
+                  }}
+                />
+                <span>Pause</span>
+              </>
+            )}
+          </button>
         </>
       )}
       {(isPaused || isFinished) && (
         <div className="flex gap-4">
-          <button onClick={handleReset} className={btnClassName}>
-            Reset
+          <button onClick={handleReset} className={BtnClassName}>
+            <Image
+              src="/ui/refresh-ccw-01.svg"
+              alt="reset"
+              width={16}
+              height={16}
+              className="svg-filter select-none"
+            />
+            <span>Reset</span>
           </button>
           <button
-            className={btnClassName}
+            className={BtnClassName}
             onClick={() => {
               const iframeElm = document.querySelector('iframe')
               if (iframeElm) {
@@ -149,7 +222,14 @@ function DrawBtn() {
               }
             }}
           >
-            Download
+            <Image
+              src="/ui/download-03.svg"
+              alt="download"
+              width={16}
+              height={16}
+              className="svg-filter select-none"
+            />
+            <span>Download</span>
           </button>
         </div>
       )}
