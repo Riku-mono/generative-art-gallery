@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Generative Arts Project
 
-## Getting Started
+## 📃 発表資料
 
-First, run the development server:
+[![Horizon  2023年度 春休み](https://github.com/Riku-mono/generative-art-gallery/assets/88787489/f576705f-382d-41e4-9a28-8f8e22aec17c)](https://www.canva.com/design/DAGAMbJicvk/v1jLqZIRj4BSfUexV_7cxw/view)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 📌 About Site
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+このサイトは、ジェネレーティブアートを中心に、プログラミングによる落書きを公開するプロジェクトです。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+アルゴリズムや手法の学習を目的としていて、作品の公開は、その過程を記録するためのものです。
+このサイトでは、作品の公開の他に、使用したアルゴリズムや手法、制作に使用したプログラムの公開などを行います。また、実際に作品を生成する体験を行うことができる機能も公開されています。
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🎨 About Generative Arts
 
-## Learn More
+ジェネレーティブアートとは、アルゴリズムや偶然性などのプログラムによって生成されるアートのことです。
+そのため、一つのアルゴリズムから生成される作品は、無限に存在します。
 
-To learn more about Next.js, take a look at the following resources:
+## ✍️ Author
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Riku-Mono](https://github.com/Riku-mono) (GitHub)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 🤝 Contributers
 
-## Deploy on Vercel
+興味を持っていただけた方は、ぜひご参加ください。詳細は、[Contribution](/)をご覧ください。
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠️ Built With
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Next.js 14](https://nextjs.org/) - SSG
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- その他...
