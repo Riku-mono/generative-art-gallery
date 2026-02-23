@@ -5,8 +5,8 @@ import './art.css'
 import Motion from './Motion'
 import Image from 'next/image'
 
-const PrimaryBtnClassName = `flex items-center gap-2 rounded-md border-2 border-neutral-500 bg-neutral-700 px-3 py-1 text-neutral-50 transition dark:bg-neutral-800`
-const BtnClassName = `flex items-center gap-2 rounded-md border-2 border-neutral-300 bg-neutral-50 px-3 py-1 transition hover:bg-neutral-100 active:scale-95 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:bg-neutral-800`
+const PrimaryBtnClassName = `flex items-center gap-2 rounded-md border-2 border-neutral-500 bg-neutral-700 px-4 py-2 text-neutral-50 transition dark:bg-neutral-800`
+const BtnClassName = `flex items-center gap-2 rounded-md border-2 border-neutral-300 bg-neutral-50 px-4 py-2 transition hover:bg-neutral-100 active:scale-95 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:bg-neutral-800`
 
 function GenerateBtn() {
   const [isGenerating, setIsGenerating] = useState(false)
@@ -54,7 +54,7 @@ function GenerateBtn() {
               )
             }
           }}
-          className={`${PrimaryBtnClassName} ${
+          className={`${PrimaryBtnClassName} min-h-[44px] min-w-[120px] justify-center ${
             isGenerating
               ? ''
               : 'hover:bg-neutral-800 active:scale-95 dark:hover:bg-neutral-900 dark:hover:text-neutral-50'

@@ -16,7 +16,7 @@ export default function GalleryItem({ path }: { path: string }) {
         >
           <a
             href={`/art/${path}`}
-            className="w-full border-8 border-neutral-900 bg-white p-6 transition-transform duration-300 hover:scale-105 dark:border-neutral-50"
+            className="w-full border-4 border-neutral-900 bg-white p-4 transition-transform duration-300 hover:scale-105 active:scale-95 sm:border-8 sm:p-6 dark:border-neutral-50"
             style={{
               boxShadow: 'inset 0 0 10px rgba(0, 0, 0, 0.5), 0 10px 10px rgba(0, 0, 0, 0.2)',
             }}

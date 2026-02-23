@@ -13,10 +13,10 @@ export default async function Home() {
   const latestArtData = await getDetail(`ArtData/${latestArt}`)
   return (
     <>
-      <main className="mx-auto my-8 min-h-full max-w-5xl flex-1 px-6">
-        <h1 className="mb-6 text-5xl font-bold text-neutral-900 dark:text-neutral-50">
+      <main className="mx-auto my-8 min-h-full max-w-5xl flex-1 px-4 sm:px-6">
+        <h1 className="mb-4 text-3xl font-bold text-neutral-900 sm:mb-6 sm:text-5xl dark:text-neutral-50">
           <span>Generative Arts </span>
-          <span className="text-4xl text-neutral-600 dark:text-neutral-300">#100</span>
+          <span className="text-2xl text-neutral-600 sm:text-4xl dark:text-neutral-300">#100</span>
         </h1>
         <p className="mb-6 text-sm text-neutral-700 dark:text-neutral-300">
           <span>新着情報: </span>

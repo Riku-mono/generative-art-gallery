@@ -2,7 +2,7 @@ import { ThemeSwitch } from '../thema/ThemeSwitch'
 
 export default function Footer() {
   return (
-    <footer className="mx-auto my-4 flex w-full max-w-5xl items-center justify-between px-6">
+    <footer className="mx-auto my-4 flex w-full max-w-5xl flex-wrap items-center justify-between gap-y-2 px-4 sm:px-6">
       <div className="h-10 min-w-[5.8rem] rounded-md dark:bg-neutral-800">
         <ThemeSwitch />
       </div>

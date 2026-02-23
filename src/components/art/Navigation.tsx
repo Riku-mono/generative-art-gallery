@@ -58,7 +58,7 @@ export default function ArtNavigation({
         target.isActive ? (
           <li
             key={target.label}
-            className="flex cursor-default gap-2 rounded-lg border-2 border-neutral-500 bg-neutral-100 px-3 py-1 dark:border-neutral-500 dark:bg-neutral-800"
+            className="flex cursor-default gap-2 rounded-lg border-2 border-neutral-500 bg-neutral-100 px-3 py-2 dark:border-neutral-500 dark:bg-neutral-800"
             aria-current="page"
           >
             <Image
@@ -73,7 +73,7 @@ export default function ArtNavigation({
         ) : (
           <li key={target.label}>
             <a
-              className="flex gap-2 rounded-lg border-2 border-neutral-300 bg-neutral-50 px-3 py-1 transition hover:bg-neutral-100 active:scale-95 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:bg-neutral-800"
+              className="flex gap-2 rounded-lg border-2 border-neutral-300 bg-neutral-50 px-3 py-2 transition hover:bg-neutral-100 active:scale-95 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:bg-neutral-800"
               href={`/art/${parent}/${target.target}`}
             >
               <Image
@@ -91,7 +91,7 @@ export default function ArtNavigation({
       {links.map((link) => (
         <li key={link.label}>
           <a
-            className="flex gap-2 rounded-lg border-2 border-neutral-300 bg-neutral-50 px-2 py-2 transition hover:bg-neutral-100 active:scale-95 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:bg-neutral-800"
+            className="flex gap-2 rounded-lg border-2 border-neutral-300 bg-neutral-50 px-3 py-2 transition hover:bg-neutral-100 active:scale-95 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:bg-neutral-800"
             href={link.href}
             target="_blank"
           >
@@ -102,6 +102,7 @@ export default function ArtNavigation({
               height={16}
               className="svg-filter select-none"
             />
+            <span className="sr-only sm:not-sr-only">{link.label}</span>
           </a>
         </li>
       ))}
